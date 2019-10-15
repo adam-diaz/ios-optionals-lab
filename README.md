@@ -36,15 +36,33 @@ print(undefinedUser)
 a. Given the variables `rectOneWidth` and `rectOneHeight` below, print "The area of rectOne is 50".  Use *Optional Binding* (`if let`) to print the area.
 
 ```swift
+
 var rectOneWidth: Double? = 5
 var rectOneHeight: Double? = 10
+
+if let oneWidth = rectOneWidth, let oneHeight = rectOneHeight {
+    let rectOneArea = oneWidth * oneHeight
+    print("The area of rectOne is \(rectOneArea)")
+} else {
+    print("The area of rectOne is not able to be calculated.")
+}
+
 ```
 
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
 
 ```swift
+
 var rectTwoWidth: Double? = nil
 var rectTwoHeight: Double? = nil
+
+if let twoWidth = rectTwoWidth, let twoHeight = rectTwoHeight {
+    let rectTwoArea = twoWidth * twoHeight
+    print("The area of rectTwo is \(rectTwoArea)")
+} else {
+    print("The area of rectTwo is not able to be calculated.")
+}
+
 ```
 
 ## Question 3
