@@ -71,9 +71,17 @@ a. Given the variables `userOneName`, `userOneAge`, and `userOneHeight` below, w
 
 
 ```swift
+
 var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
+
+if let nameOne = userOneName, let ageOne = userOneAge, let heightOne = userOneHeight {
+    let height = (heightOne / 12)
+    print("Hello \(nameOne)! You are \(ageOne) years old and \(String(format:"%.2f", height)) feet tall.")
+}
+
+
 ```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
