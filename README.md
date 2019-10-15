@@ -87,9 +87,22 @@ if let nameOne = userOneName, let ageOne = userOneAge, let heightOne = userOneHe
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
 
 ```swift
+
+Attempt:
+
 var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
+
+if let nameTwo = userTwoName, let ageTwo = userTwoAge, let heightTwo = userTwoHeight {
+    if nameTwo {
+        "user"
+    } else if heightTwo {
+        "I dont know how tall you are."
+    }
+    print("Hello \(nameTwo)! you are \(ageTwo) years old and \(heightTwo)")
+}
+
 ```
 
 
