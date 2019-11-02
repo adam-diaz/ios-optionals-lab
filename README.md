@@ -88,18 +88,19 @@ b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, wr
 
 ```swift
 
-Attempt:
+Attempt: (Please assist me with this) - this is a formewr request but i would still like to go over this to discuss other solutions
 
 var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
 
 if let nameTwo = userTwoName, let ageTwo = userTwoAge, let heightTwo = userTwoHeight {
-    if nameTwo {
-        "user"
-    } else if heightTwo {
-        "I dont know how tall you are."
-    }
+    print("Hello \(nameTwo)! you are \(ageTwo) years old and \(heightTwo)")
+} else {
+    
+    let nameTwo = "user"
+    let heightTwo = "I dont know how tall you are."
+    let ageTwo = userTwoAge ?? 15
     print("Hello \(nameTwo)! you are \(ageTwo) years old and \(heightTwo)")
 }
 
@@ -108,12 +109,20 @@ if let nameTwo = userTwoName, let ageTwo = userTwoAge, let heightTwo = userTwoHe
 
 ## Question 4
 
-Give the variable `favoriteNumber`, write code that either prints "Your favorite number is " followed by the number, or "I don't know what your favorite number is"
+Given  the variable `favoriteNumber`, write code that either prints "Your favorite number is " followed by the number, or "I don't know what your favorite number is"
 
 `favoriteNumber` is of type Int? and will either be `nil` or a random number between 0 and 10.  It will change each time you run your Playground.
 
 ```swift
+
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
+
+if favoriteNumber != nil {
+    print("the num is \(String(describing: favoriteNumber))")
+} else {
+    print("is nil")
+}
+
 ```
 
 
@@ -140,7 +149,43 @@ for _ in 0..<10 {
 }
 ```
 
+// this code is alex's answer when we worked on it in class together.
+
 b. Using the same variable, find the average of all non-nil values.
+
+var messages: [String] = ["Good, Morning"]
+for _ in 0..<10 {
+  messages.append("Hello, Yulia") // append() - adds to array
+}
+print(messages.count)
+
+
+// a - add only non-nil values
+var numbers = [Int?]()
+for _ in 0..<10 {
+    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
+}
+
+var sum = 0
+for num in numbers {
+  sum += num ?? 0 // nil-coalescing to unwrap num
+}
+print("The sum of all the numbers is \(sum)")
+
+
+// b - average of non-nil values
+sum = 0 // clearing sum
+var nonNilValueCount = 0
+for num in numbers {
+  // use optional binding to unwrap num
+  if let unwrappedNum = num {
+    // valid integer here, increment nonNilValueCount by 1
+    nonNilValueCount += 1
+    sum += unwrappedNum
+  }
+}
+print(numbers)
+print("The average of the \(nonNilValueCount) non-nil values is \(sum / nonNilValueCount)")
 
 ## Extra Questions
 
